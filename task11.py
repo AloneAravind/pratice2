@@ -36,8 +36,8 @@ def are_anagrams(str1, str2):
     else:
         print("it's is  not a anagram")
 
-string1 = input("Enter the first string: ")
-string2 = input("Enter the second string: ")
+string1 = input("Enter the first string to check anagram : ")
+string2 = input("Enter the second string to check anagram : ")
 are_anagrams(string1, string2)
    
 # # 4 write a function to rotate a list to the right by k
