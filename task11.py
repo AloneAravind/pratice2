@@ -133,7 +133,7 @@ b = []
 for i in list1:
     b.append(int(i)**int(list1[-1]))
 if sum(b) == num:
-    print("it's is a armstrong number")
+    print(num , " it's is a armstrong number")
 else:
-    print("it's is not a armstrong")
+    print(num, " it's is not a armstrong")
 
