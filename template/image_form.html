@@ -1,0 +1,16 @@
+<!-- templates/image_form.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% if form.instance.pk %}Update{% else %}Create{% endif %} Image</title>
+</head>
+<body>
+    <h1>{% if form.instance.pk %}Update{% else %}Create{% endif %} Image</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIEW</title>
+    <style>table,tr,th,td {border : 2px solid red; border-collapse : collapse}</style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>NAME</th>
+            <th>REG_NUMBER</th>
+            <th>EMAIL</th>
+            <th>ADDRESS</th>
+            <th>UPDATE</th>
+            <th>DELETE</th>
+        </tr>
+        {% for i in key %}
+            <tr>
+                <td>{{i.name}}</td>
+                <td>{{i.reg_num}}</td>
+                <td>{{i.email}}</td>
+                <td>{{i.address}}</td>
+                <td><a href = "/app3/update/{{i.id}}"><input type="button" value = "update"></a></td>
+                <td><a href = "/app3/delete/{{i.id}}"><input type="submit" value = "delete"></a></td>
+            </tr>
+
+        {% endfor %}
+
+        <a href="/app3/create"><input type = "button" value = "create new info">
+        </a>
+    </table>
+
+</body>
+</html>

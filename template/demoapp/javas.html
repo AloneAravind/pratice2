@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JS checkup</title>
+
+{% load static %}  <!--  it is used to load static files succh as css , hs , images into our htmltemplates  -->
+<!-- In Django, {% load static %} is a template tag used to tell Django to set up the mechanism for serving
+ static files like CSS, JavaScript, images, etc., in your HTML templates -->
+
+
+<link rel="stylesheet" href="{% static 'css/mycss.css' %}">
+<!-- Include the external JavaScript file -->
+<script src="{% static 'js/demo.js' %}"></script>
+</head>
+<body>
+    
+<h1>This is a Simple HTML and CSS Example</h1>
+<p>This is a paragraph of text.</p>
+    <img src="{% static 'image/image1.jpg' %}" alt="Example Image">
+
+
+
+
+
+
+<!-- Call the showAlert function defined in script.js -->
+<script>
+showAlert();
+</script>
+
+</body>
+</html>

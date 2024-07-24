@@ -1,0 +1,17 @@
+<!-- templates/image_detail.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image Detail</title>
+</head>
+<body>
+    <h1>{{ image.name }}</h1>
+    <p>Price: {{ image.price }}</p>
+    <p>Description: {{ image.description }}</p>
+    <img src="{{ image.image.url }}" alt="{{ image.name }}">
+    <br>
+    <a href="{% url 'image_update' image.pk %}">Edit</a>
+    <a href="{% url 'image_delete' image.pk %}">Delete</a>
+</body>
+</html>

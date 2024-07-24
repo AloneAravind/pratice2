@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table 1</title>
+    <style>table,tr,th,td{border : 5px solid red; border-collapse: collapse}</style>
+</head>
+<body>
+    {{datakey}}
+
+<table>
+    <tr>
+        <th>NAME</th>
+        <th>AGE</th>
+        <th>RESUME</th>
+        <th>E-mail id</th>
+        <th>LINK</th>
+        <th>PHONE - no</th>
+        <th>GENDER</th>
+    </tr>
+    
+{% for i in datakey  %}
+    <tr>
+        <td>{{i.name}}</td>
+        <td>{{i.age}}</td>
+        <td>{{i.resume}}</td>
+        <td>{{i.email_id}}</td>
+        <td>{{i.link}}</td>
+        <td>{{i.phone_no}}</td>
+        <td>{{i.gender}}</td>
+    </tr>
+    
+{% endfor%}
+</table>
+
+</body>
+</html>
+

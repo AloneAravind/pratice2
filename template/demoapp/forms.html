@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+</head>
+<body>
+    <!-- doubt why  dont use action -->
+    <form  method = "POST">  
+    <!-- <form action = '/app3/create/' method = "POST"> -->
+        {% csrf_token %}
+        {{crt.as_p}}
+        <input type = "submit" value = 'save'>
+    </form>
+        
+    <!-- {{crt}} -->
+
+
+
+</body> 
+</html>

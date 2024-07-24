@@ -1,0 +1,22 @@
+/* styles.css */
+
+/* Centering the heading */
+h1 {
+    text-align: center;
+    color : red;
+}
+
+/* Styling the paragraph */
+p {
+    font-size: 18px;
+    color: green;
+    text-align: center;
+}
+
+/* Styling the image */
+img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+}
