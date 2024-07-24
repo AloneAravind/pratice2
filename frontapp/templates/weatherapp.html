@@ -1,0 +1,80 @@
+{% extends 'index.html' %}
+{% block content %}
+<style>
+    .shadow{
+        box-shadow: 2px 2px 3px 1px rebeccapurple;
+        padding: 20px;
+    }
+</style>
+   <center> <button>WEATHER API</button><br/><br/>
+
+    {% if messages %}
+        {% for message in messages %}
+        {% if message.tags == 'error' %}
+            <div class="alert alert-danger">
+               {{message}}
+            </div>
+        {% else %}
+            <div class="alert alert-{{ message.tags }}">
+                {{message}}
+            </div>
+        {% endif %}
+        {% endfor %}
+    {% endif %}
+
+    <form method="POST">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">Add CITY</button><br/><br/>
+    </form>
+
+    {% for city in data %}
+        <div class = "shadow media">
+            <div class="media-left">
+                <a href="#">
+                    <img src="http://openweathermap.org/img/w/{{city.icon}}.png" alt="Image">
+                </a>
+            </div>
+            <div class="media-body">
+                <h3>{{city.city}}</h3>
+                <h4>{{city.temperature}}&deg;C</h3>
+                <h4>{{city.description}}</h3>
+                <h4>{{city.country}}</h3>
+            </div>
+            <div class="media-rigt">
+                <h3><a href="{% url 'DCity' city.city %}" style="text-decoration: none;" class="text-danger">&#x2718;</a></h3>
+            </div>
+        </div>
+    <!-- {{ city }} -->
+    {% endfor %}
+</center>
+
+
+{% endblock %}
+
+
+
+
+<!-- weather.html
+
+
+
+ <!DOCTYPE html>
+<html>
+<head>
+    <title>Weather App</title>
+</head>
+<body>
+    
+    hello
+    <h1>Weather in {{ weather.city }}</h1>
+    <p>Temperature: {{ weather.temperature }}°C</p>
+    <p>Description: {{ weather.description }}</p>
+    <img src="http://openweathermap.org/img/wn/{{ weather.icon }}.png" alt="Weather Icon">
+    <form method="GET">
+        <label for="city">Enter City:</label>
+        <input type="text" id="city" name="city" value="{{ weather.city }}">
+        <button type="submit">Get Weather</button>
+    </form>
+</body>
+</html> -->
